@@ -17,6 +17,7 @@ class Pergunta {
 // Classe principal que contém o metodo main
 public class Quiz {
     public static void main(String[] args) {
+        int pontos = 0;
         // Cria uma lista de perguntas
         List<Pergunta> perguntas = new ArrayList<>();
 
@@ -181,11 +182,14 @@ public class Quiz {
 
             if (resposta == p.respostaCorreta){
                 JOptionPane.showMessageDialog(null, "Correto!");
+                pontos += 100;
             } else {
                 JOptionPane.showMessageDialog(null, "Incorreto! A resposta correta é: " + p.alternativas.get(p.respostaCorreta));
                 // p.alternativas.get(p.respostaCorreta) - pega a string da respostaCorreta
                 // p.respostaCorreta - pega o índice da respotaCorreta
             }
         }
+
+        JOptionPane.showMessageDialog(null, "Pontuação final: " + pontos + "!");
     }
 }
