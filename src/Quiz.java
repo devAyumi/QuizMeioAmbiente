@@ -14,9 +14,8 @@ class Pergunta {
     }
 }
 
-// Classe principal que contém o metodo main
 public class Quiz {
-    public static void main(String[] args) {
+    public static void iniciarQuiz() {
         int pontos = 0;
         // Cria uma lista de perguntas
         List<Pergunta> perguntas = new ArrayList<>();
@@ -177,7 +176,7 @@ public class Quiz {
 
             if (resposta == -1){
                 JOptionPane.showMessageDialog(null, "Quiz cancelado");
-                break;
+                System.exit(0);
             }
 
             if (resposta == p.respostaCorreta){
