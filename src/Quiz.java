@@ -28,7 +28,7 @@ public class Quiz {
 
         perguntas.add(new Pergunta(
                 "O que significa a palavra reciclar?",
-                Arrays.asList("Jogar fora", "Reaproveitar materiais", "Enterrar o lixo"),
+                Arrays.asList("Jogar fora", "Enterrar o lixo", "Reaproveitar materiais"),
                 1
         ));
 
@@ -37,7 +37,7 @@ public class Quiz {
                 Arrays.asList("Nada acontece", "Pode poluir a água e o solo", "Limpa os canos"),
                 1
         ));
-/*
+
         perguntas.add(new Pergunta(
                 "Qual destes animais sofre com a poluição dos oceanos?",
                 Arrays.asList("Tartarugas marinhas", "Peixes", "Corais", "Todos"),
@@ -156,7 +156,7 @@ public class Quiz {
                 "Como podemos ajudar o planeta na escola?",
                 Arrays.asList("Jogando lixo no chão", "Separando o lixo", "Usando mais papel"),
                 1
-        ));*/
+        ));
 
         // Laço que percorre todas as perguntas da lista
         // A cada volta no laço, ele pega um elemento da lista "perguntas" e o coloca na variável p do tipo "Pergunta".
@@ -172,7 +172,7 @@ public class Quiz {
                     null // opção padrão selecionada quando o diálogo abrir, nesse caso nenhuma alternativa pré-selecionada
             );
 
-            // a resposta vai ser o índice clicado, ou -1 se a janela for fechada
+            // a resposta vai ser o índice clicado, ou −1 se a janela for fechada
 
             if (resposta == -1){
                 JOptionPane.showMessageDialog(null, "Quiz cancelado");
@@ -185,10 +185,19 @@ public class Quiz {
             } else {
                 JOptionPane.showMessageDialog(null, "Incorreto! A resposta correta é: " + p.alternativas.get(p.respostaCorreta));
                 // p.alternativas.get(p.respostaCorreta) - pega a string da respostaCorreta
-                // p.respostaCorreta - pega o índice da respotaCorreta
+                // p.respostaCorreta - pega o índice da respostaCorreta
             }
         }
+        String mensagemFinal = null;
 
-        JOptionPane.showMessageDialog(null, "Pontuação final: " + pontos + "!");
+        if (pontos <= 800){
+            mensagemFinal = "Vamos aprender a cuidar melhor do planeta?";
+        } else if (pontos > 800 && pontos < 2000) {
+            mensagemFinal = "Você está chegando lá! O planeta agradece.";
+        } else if (pontos > 2000) {
+            mensagemFinal = "Você realmente sabe como cuidar do planeta! Parabéns!";
+        }
+
+        JOptionPane.showMessageDialog(null, "Pontuação final: " + pontos + "!" + "\n" + mensagemFinal);
     }
 }
