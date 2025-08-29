@@ -14,11 +14,7 @@ public class MenuInicial {
         panel.setLayout(new GridBagLayout()); // define o gerenciador de layout como um GridBagLayout
         // GridBagLayout organiza os componentes em grade de linhas e colunas
 
-        GridBagConstraints configBotoes = new GridBagConstraints();
-
-        configBotoes.gridy = 0;
-        configBotoes.anchor = GridBagConstraints.CENTER; // posição dentro da célula
-        configBotoes.insets = new Insets(10,10,10,10); // margens
+        GridBagConstraints configBotoes = Utils.criarConfigBotoes(0); // chama o método criado para armazenar a variável configBotoes
 
         JButton botaoIniciar = new JButton("INICIAR");
         Utils.configuracaoBotao(botaoIniciar, () -> Quiz.iniciarQuiz()); // Chama o método Utils e os parâmetros botaoIniciar e o runnable de Utils
@@ -31,5 +27,8 @@ public class MenuInicial {
 
         frame.add(panel); // adiciona o painel ao frame
         frame.setVisible(true); // torna o frame visível
+
+        //JTextArea pontuacaoEMensagemFinal = Quiz.MostrarMensagemFinal();
+        //panel.add(pontuacaoEMensagemFinal);
     }
 }

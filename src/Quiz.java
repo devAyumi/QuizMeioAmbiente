@@ -1,5 +1,7 @@
 import javax.swing.*;
+import javax.swing.text.JTextComponent;
 import java.util.*;
+import java.util.List;
 
 class Pergunta {
     String enunciado;
@@ -37,7 +39,7 @@ public class Quiz {
                 Arrays.asList("Nada acontece", "Pode poluir a água e o solo", "Limpa os canos"),
                 1
         ));
-
+/*
         perguntas.add(new Pergunta(
                 "Qual destes animais sofre com a poluição dos oceanos?",
                 Arrays.asList("Tartarugas marinhas", "Peixes", "Corais", "Todos"),
@@ -157,6 +159,7 @@ public class Quiz {
                 Arrays.asList("Jogando lixo no chão", "Separando o lixo", "Usando mais papel"),
                 1
         ));
+*/
 
         // Laço que percorre todas as perguntas da lista
         // A cada volta no laço, ele pega um elemento da lista "perguntas" e o coloca na variável p do tipo "Pergunta".
@@ -197,6 +200,12 @@ public class Quiz {
         } else if (pontos > 2000) {
             mensagemFinal = "Você realmente sabe como cuidar do planeta! Parabéns!";
         }
+
+//    public static JTextArea MostrarMensagemFinal(){
+//        JTextArea pontuacaoEMensagemFinal = new JTextArea("Pontuação final: "/* + pontos + "!" + "\n" + mensagemFinal*/);
+//        pontuacaoEMensagemFinal.setVisible(true);
+//        return pontuacaoEMensagemFinal;
+//    }
 
         JOptionPane.showMessageDialog(null, "Pontuação final: " + pontos + "!" + "\n" + mensagemFinal);
     }
