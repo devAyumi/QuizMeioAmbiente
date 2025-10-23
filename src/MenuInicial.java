@@ -6,7 +6,7 @@ public class MenuInicial {
     public static void main(String[] args){
         JFrame frame = new JFrame("Aplicativo em tela cheia"); // criação do frame
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setUndecorated(true); // remove bordas e barra de título
+        frame.setUndecorated(false); // remove bordas e barra de título
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH); // maximiza o frame horizontal e verticalmente (tela cheia)
 
         JPanel panel = new JPanel(); // criação do painel principal
@@ -23,7 +23,7 @@ public class MenuInicial {
 
         configBotoes.gridy = 1;
         Utils.configuracaoBotao(botaoSair, () -> System.exit(0));
-        //panel.add(botaoSair, configBotoes); // adiciona o botão "SAIR" ao painel
+        panel.add(botaoSair, configBotoes); // adiciona o botão "SAIR" ao painel
 
         frame.add(panel); // adiciona o painel ao frame
         frame.setVisible(true); // torna o frame visível
