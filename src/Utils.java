@@ -5,7 +5,7 @@ import java.awt.event.MouseEvent;
 
 public class Utils {
     public static void configuracaoBotao(JButton botao, Runnable acao) {
-        Font fonteOriginal = new Font("Arial", Font.PLAIN, 20); // cria uma variável de fonte
+        Font fonteOriginal = new Font("Arial", Font.PLAIN, 30); // cria uma variável de fonte
 
         botao.setBackground(Color.GRAY); // pega a background do panel em MenuInicial
         botao.setFocusPainted(false); // remove o contorno de foco ao clicar
@@ -21,7 +21,7 @@ public class Utils {
         botao.addMouseListener(new MouseAdapter() { // estilo quando mouse passa por cima
             @Override
             public void mouseEntered(MouseEvent e) {
-                botao.setFont(new Font("Arial", Font.BOLD, 20));
+                botao.setFont(new Font("Arial", Font.BOLD, 30));
             }
         });
         botao.addMouseListener(new MouseAdapter() { // estilo quando mouse sai de cima

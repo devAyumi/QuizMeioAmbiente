@@ -17,6 +17,10 @@ class Pergunta {
 
 public class Quiz extends JFrame {
     public static void iniciarQuiz(JPanel panel, JButton botaoSair) {
+        Font fontePergunta = new Font("Arial", Font.PLAIN, 25);
+        Font fonteAlternativa = new Font("Arial", Font.PLAIN, 25);
+        Font fonteResultado = new Font("Arial", Font.BOLD, 25);
+
         panel.removeAll();
         panel.revalidate();
         panel.repaint();
@@ -191,6 +195,7 @@ public class Quiz extends JFrame {
                 resultado.setFont(new Font("Arial", Font.BOLD, 16));
                 resultado.setForeground(Color.BLACK);
                 resultado.setAlignmentX(Component.CENTER_ALIGNMENT);
+                resultado.setFont(fonteResultado);
                 panel.add(resultado);
 
                 panel.add(Box.createRigidArea(new Dimension(0, 20)));
@@ -207,6 +212,7 @@ public class Quiz extends JFrame {
             Pergunta p = perguntas.get(perguntaAtual[0]);
             JLabel perguntaEnunciado = new JLabel(p.enunciado);
             perguntaEnunciado.setAlignmentX(Component.CENTER_ALIGNMENT);
+            perguntaEnunciado.setFont(fontePergunta);
             panel.add(perguntaEnunciado);
 
             panel.add(Box.createRigidArea(new Dimension(0, 20)));
@@ -218,6 +224,7 @@ public class Quiz extends JFrame {
                 String textoAlternativa = p.alternativas.get(i);
                 JRadioButton opcao = new JRadioButton(textoAlternativa);
                 opcao.setAlignmentX(Component.CENTER_ALIGNMENT);
+                opcao.setFont(fonteAlternativa);
                 opcao.setBackground(Color.GRAY);
                 int indiceOpcao = i;
 
